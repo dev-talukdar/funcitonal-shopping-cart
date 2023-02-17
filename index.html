@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cmyk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Using JS DOM</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/2151e933cd.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+
+    <!-- header section started -->
+    <header>
+        <div class="navbar bg-base-100 shadow-2xl lg:px-12">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl">Khejur BD</a>
+            </div>
+            <div class="flex-none gap-2">
+                <div class="form-control">
+                    <input type="text" placeholder="Search" class="input input-bordered" />
+                </div>
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img class="fluid" src="/images/review-1.png" />
+                        </div>
+                    </label>
+                    <ul tabindex="0"
+                        class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                        <li>
+                            <a class="justify-between">
+                                Profile
+                                <span class="badge">New</span>
+                            </a>
+                        </li>
+                        <li><a>Settings</a></li>
+                        <li><a>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- header section ended -->
+
+
+    <!-- main section started -->
+    <main>
+
+        <section class="lg: px-12 flex flex-col md:flex-row lg:flex-row">
+
+            <div class="product-details mt-5 mb-5 w-[80%] grid md:grid-cols-2 lg:grid-cols-3 gap-5 px-6">
+                <div class="card card-compact w-full bg-base-100 shadow-xl mx-auto mt-5 ">
+                    <figure class="px-10 pt-10">
+                        <img class="fluid" aria-colspan="w-" src="./images/5.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 id="piano" class="card-title">
+                            NIKE / DR9705-100</h2>
+                        <p>NIKE DUNK LOW VALENTINES DAY WOMENS (2023)</p>
+                        <p>Price: $<span id="piano-price">1100</span> </p>                        
+                            <p>Quantity <span id="piano-qty"> 1</span></p>                       
+                        <div class="card-actions">
+                            <button id="cart-one" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-full bg-base-100 shadow-xl mt-5 mx-auto">
+                    <figure class="px-10 pt-10">
+                        <img class="fluid" aria-colspan="w-" src="./images/4.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 id="cosmetic" class="card-title">NIKE / DD1503-118</h2>
+                        <p>NIKE DUNK LOW ROSE WHISPER WOMENS</p>
+                        <p>Price: $<span id="cosmetic-price">60</span> </p>
+                        <p>Quantity <span id="cosmetic-qty">2</span></p>
+
+                        <div class="card-actions">
+                            <button id="cart-two" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-full bg-base-100 shadow-xl mt-5 mx-auto">
+                    <figure class="px-10 pt-10">
+                        <img class="fluid" aria-colspan="w-" src="./images/3.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 id="oil" class="card-title">NIKE / DQ7576-001</h2>
+                        <p>NIKE DUNK LOW ESS LIGHT IRON ORE</p>
+                        <p>Price: $<span id="oil-price">10</span> </p>                        
+                            <p>Quantity <span id="oil-qty"> 2</span></p>                       
+                        <div class="card-actions">
+                            <button id="cart-three" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-full bg-base-100 shadow-xl mt-5 mx-auto mb-5">
+                    <figure class="px-10 pt-10">
+                        <img class="fluid" aria-colspan="w-" src="./images/2.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 id="coffe-machine" class="card-title">NIKE / DV6482-100</h2>
+                        <p>NIKE DUNK LOW 3D SWOOSH GREY.</p>
+                        <p>Price: $<span id="coffe-machine-price">230</span> </p>                       
+                            <p>Quantity <span id="coffe-machine-qty"> 2</span></p>                       
+                        <div class="card-actions">
+                            <button id="cart-four" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-full bg-base-100 shadow-xl mt-5 mx-auto mb-5">
+                    <figure class="px-10 pt-10">
+                        <img class="fluid" aria-colspan="w-" src="./images/1.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 id="cloth-wash" class="card-title">NIKE / DQ7576-001</h2>
+                        <p>NIKE DUNK LOW ESS LIGHT IRON ORE</p>
+                        <p>Price: $<span id="cloth-wash-price">80</span> </p>                       
+                            <p>Quantity <span id="cloth-wash-qty">2</span></p>                       
+                        <div class="card-actions">
+                            <button id="cart-five" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-full bg-base-100 shadow-xl mt-5 mx-auto mb-5 ">
+                    <figure class="px-10 pt-10">
+                        <img class="fluid" aria-colspan="w-" src="./images/6.jpg" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 id="nike-shoe" class="card-title">NIKE / DV6482-100</h2>
+                        <p>NIKE DUNK LOW 3D SWOOSH GREY.</p>
+
+                        <input id="input-one" class="input input-bordered input-sm w-full max-w-sx" type="text" placeholder="Price">
+                        <input id="input-two" class="input input-bordered input-sm w-full max-w-sx" type="text" placeholder="Quantity">
+
+                    </div>
+                    <div class="card-actions">
+                        <button id="cart-six" class="btn btn-primary cart-last">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+            <div class=" cart-details  w-full md:w-[30%] lg:w-[30%] mx-auto ">
+                <h1 class="text-3xl text-center font-bold underline  mt-5">Total Products <span>0</span></h1>
+
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                        <!-- head -->
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nanme</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-container">
+                            <!-- row 1
+                        <tr>
+                          <th>1</th>
+                          <td>Cy Ganderton</td>
+                          <td>Quality Control Specialist</td>
+                          <td>Blue</td>
+                        </tr> -->
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <!-- footer section started -->
+
+        <footer>
+
+
+
+        </footer>
+
+        <!-- footer section ended -->
+
+    </main>
+
+    <!-- main section ended -->
+
+
+    <!-- Bootstrap JS -->
+
+    <script src="js/index.js"></script> 
+    <!-- <script src="js/submit.js"></script> -->
+</body>
+
+</html>
